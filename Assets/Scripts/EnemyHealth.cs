@@ -2,36 +2,57 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    [Header("Health Settings")]
-    public int maxHealth = 100;
-    private int currentHealth;
+    public float maxHealth = 100f;
+    float currentHealth;
+    public GameObject deathEffect; // optional VFX prefab
+    public float destroyDelay = 0f; // set >0 if you have death animation
 
-    [Header("Effects")]
-    public ParticleSystem deathEffect;
+    private Animator animator;
+    private bool isDead = false;
 
-    private void Start()
+    void Awake()
     {
         currentHealth = maxHealth;
+        animator = GetComponent<Animator>();
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float dmg)
     {
-        currentHealth -= damage;
-        Debug.Log(gameObject.name + " took " + damage + " damage! Current HP: " + currentHealth);
+        if (isDead) return;
 
-        if (currentHealth <= 0)
+        currentHealth -= dmg;
+        if (currentHealth <= 0f)
         {
             Die();
         }
+        else
+        {
+            // optional: play hurt animation or sound
+            if (animator) animator.SetTrigger("Hurt");
+        }
     }
 
-    private void Die()
+    void Die()
     {
-        if (deathEffect != null)
+        isDead = true;
+
+        // play death animation if present
+        if (animator)
+        {
+            animator.SetTrigger("Die");
+        }
+
+        // spawn death effect
+        if (deathEffect)
         {
             Instantiate(deathEffect, transform.position, Quaternion.identity);
         }
 
-        Destroy(gameObject); // remove enemy
+        // disable collider and any movement scripts so enemy stops interacting
+        Collider col = GetComponent<Collider>();
+        if (col) col.enabled = false;
+
+        // destroy object after delay (gives time for death animation)
+        Destroy(gameObject, destroyDelay);
     }
 }
