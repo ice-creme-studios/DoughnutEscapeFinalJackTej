@@ -108,9 +108,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7115f514280c1dc4a94420484fc0a4b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   maxHealth: 100
+  detectionRadius: 10
+  attackRadius: 2
   deathEffect: {fileID: 0}
-  destroyDelay: 0
+  destroyDelay: 0.16
 --- !u!1001 &8556525120139988887
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -147,7 +150,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: aaeb32cf0a92ffa40a0abed3c82f7982,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.26171875
+      value: -0.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: aaeb32cf0a92ffa40a0abed3c82f7982,
         type: 3}
@@ -194,6 +197,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZombieMesh
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: aaeb32cf0a92ffa40a0abed3c82f7982,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c209241a7ac1d6e42b0f367e63895623, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

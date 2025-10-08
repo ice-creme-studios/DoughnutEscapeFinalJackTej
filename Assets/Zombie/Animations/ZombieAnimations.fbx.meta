@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: 43d695fb271501440884f457e53ca18a
+AssetOrigin:
+  serializedVersion: 1
+  productId: 314903
+  packageName: Stylized Zombie Model + Animations
+  packageVersion: 1.0
+  assetPath: Assets/Zombie/Animations/ZombieAnimations.fbx
+  uploadId: 751334
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -274,7 +281,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -396,10 +403,3 @@ ModelImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 314903
-  packageName: Stylized Zombie Model + Animations
-  packageVersion: 1.0
-  assetPath: Assets/Zombie/Animations/ZombieAnimations.fbx
-  uploadId: 751334
