@@ -5338,7 +5338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77810d2220e51844e84ebed6f594103c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
+  cam: {fileID: 8648775351875780415}
   muzzleFlash: {fileID: 4631349912505277078}
   hitEffectPrefab: {fileID: 0}
   damage: 50
