@@ -1411,6 +1411,11 @@ PrefabInstance:
       objectReference: {fileID: 288627981}
     - target: {fileID: 8747248972867365142, guid: da243848b433db34c9cf5fba0d0f88ec,
         type: 3}
+      propertyPath: destroyDelay
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8747248972867365142, guid: da243848b433db34c9cf5fba0d0f88ec,
+        type: 3}
       propertyPath: detectionRadius
       value: 50
       objectReference: {fileID: 0}
