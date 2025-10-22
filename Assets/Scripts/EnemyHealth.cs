@@ -136,39 +136,32 @@ public class EnemyHealth : MonoBehaviour
         Destroy(gameObject, destroyDelay);
     }
 
-    // ---- Draw detection dome in Scene view ----
 #if UNITY_EDITOR
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-
-        // Draw a dome (top hemisphere)
         int segments = 24;
         float radius = detectionRadius;
         Vector3 center = transform.position;
 
         for (int i = 0; i < segments; i++)
         {
-            float theta1 = Mathf.PI * i / segments * 0.5f;  // only half circle vertically
+            float theta1 = Mathf.PI * i / segments * 0.5f;
             float theta2 = Mathf.PI * (i + 1) / segments * 0.5f;
 
             for (int j = 0; j <= segments; j++)
             {
                 float phi1 = 2 * Mathf.PI * j / segments;
-                float phi2 = 2 * Mathf.PI * (j + 1) / segments;
-
                 Vector3 p1 = new Vector3(
                     radius * Mathf.Sin(theta1) * Mathf.Cos(phi1),
                     radius * Mathf.Cos(theta1),
                     radius * Mathf.Sin(theta1) * Mathf.Sin(phi1)
                 );
-
                 Vector3 p2 = new Vector3(
                     radius * Mathf.Sin(theta2) * Mathf.Cos(phi1),
                     radius * Mathf.Cos(theta2),
                     radius * Mathf.Sin(theta2) * Mathf.Sin(phi1)
                 );
-
                 Gizmos.DrawLine(center + p1, center + p2);
             }
         }
